@@ -33,7 +33,9 @@ public class WatchController
 	@GetMapping("/watches")
 	public ResponseEntity<List<GetWatchesResponse>> GetWatches()
 	{
-		return ResponseEntity.status(HttpStatus.OK).body(watchService.GetWatches());
+		List<GetWatchesResponse> response = watchService.GetWatches();
+
+		return ResponseEntity.status(HttpStatus.OK).body(response);
 	}
 	
 	@PostMapping(value = "/watches")
@@ -42,11 +44,5 @@ public class WatchController
 		CreateWatchResponse response = watchService.PostWatch(request);
 		
 		return ResponseEntity.status(HttpStatus.CREATED).body(response);
-
-		//return ResponseEntity.status(HttpStatus.OK).body(_watchService.GetWatches());
-		
-		//return response;
-		//throw new ResponseStatusException(HttpStatus.CREATED, "Cause description here");
-		//return "Hello Worlsssssd from Spring Boot";
 	}
 }
