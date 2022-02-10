@@ -1,4 +1,4 @@
-# cleevio-task
+# Spring Boilerplate
 
 This is a backend project which developed with ❤️ using Spring Boot, Hibernate and PostgreSQL.
 
